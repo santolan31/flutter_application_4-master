@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_4/presentation/providers/movies/movies_provider.dart';
+import 'package:flutter_application_4/presentation/widgets/shared/custombutton_navigation.dart';
+
+import '../../widgets/widgets.dart';
+import '../movie/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,12 +12,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("HomeScreen"),
-        ),
-        body: _ViewMovies());
+    return const Scaffold(
+      body: _ViewMovies(),
+      bottomNavigationBar: CustomButoonNavigation(),
+    );
   }
 }
 
@@ -34,6 +35,18 @@ class _ViewMoviesState extends ConsumerState<_ViewMovies> {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
+    final slideShowMovies = ref.watch(moviesSlideShowProvider);
+
+    return Column(
+      children: [
+        const CustomAppBar(),
+        MoviesSlideshow(movies: slideShowMovies, ),
+        HorizontalListview(movies: nowPlayingMovies,label: "En cines",
+        subtitle: "lunes"
+        
+        )
+      ],
+    );
   }
 }

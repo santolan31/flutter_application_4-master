@@ -1,4 +1,4 @@
-import 'package:flutter_application_4/presentation/providers/movies/movies_repository_providers.dart';
+import 'package:flutter_application_4/presentation/providers/movie/movies_repository_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../domain/entities/movie.dart';
