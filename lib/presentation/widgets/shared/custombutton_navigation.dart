@@ -25,18 +25,18 @@ class _CustomButoonNavigationState extends State<CustomButoonNavigation> {
       },
       elevation: 0, items: [
       BottomNavigationBarItem(
-          icon: Icon(
+          icon: const Icon(
             Icons.home_max,
           ),
           label: "Inicio",
           
           backgroundColor: colors.primary),
       BottomNavigationBarItem(
-          icon: Icon(Icons.label_outline),
+          icon: const Icon(Icons.label_outline),
           label: "Categorías",
           backgroundColor: colors.secondary),
       BottomNavigationBarItem(
-        icon: Icon(Icons.favorite_outline),
+        icon: const Icon(Icons.favorite_outline),
         label: "Favoritos",
         backgroundColor: colors.tertiary,
       ),
